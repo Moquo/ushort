@@ -43,9 +43,28 @@
     border-color: #487eb0;
     box-shadow: 1px 1px 3px rgba(10, 10, 10, 0.5);
 }
-.btn-blue:focus, .bnt-blue.focus {
+.btn-blue:focus {
     color: #fff;
     background-color: #273c75;
     border-color: #273c75;
     box-shadow: 0px 0px 0px #000;
+}
+
+/* Forms */
+.form-text-field {
+    background-color: transparent;
+    border-radius: 0px;
+    border: none;
+    border-bottom: 1px solid #353b48;
+}
+.form-text-field:focus {
+    background-color: transparent;
+    border-radius: 0px;
+    border: none;
+    border-bottom: 1px solid #00a8ff;
+    box-shadow: none;
+}
+.form-text-field:invalid {
+    box-shadow: none;
+    border-bottom: 1px solid #e74c3c;
 }
