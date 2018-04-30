@@ -2,8 +2,16 @@
  * CSS for ushort by Moquo
  * Link to the Github-Repo: https://github.com/Moquo/ushort
  */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+* {
+    font-family: 'Open Sans', sans-serif;
+}
 
 /* Navbar */
+.navbar {
+    margin-bottom: 40px;
+}
 .nav-light-theme {
     background-color: #f5f6fa !important;
     box-shadow: 0px 0px 10px rgba(10, 10, 10, 0.5);
@@ -14,4 +22,30 @@
 }
 .nav-light-theme .navbar-nav .nav-link {
     color: #111;
+}
+
+/* Dark container */
+.cont-dark {
+    background-color: #f5f6fa;
+    box-shadow: 2px 2px 4px rgba(10, 10, 10, 0.5);
+}
+
+/* Buttons */
+.btn-blue {
+    color: #fff;
+    background-color: #0097e6;
+    border-color: #0097e6;
+    box-shadow: 1px 1px 3px rgba(10, 10, 10, 0.5);
+}
+.btn-blue:hover {
+    color: #fff;
+    background-color: #487eb0;
+    border-color: #487eb0;
+    box-shadow: 1px 1px 3px rgba(10, 10, 10, 0.5);
+}
+.btn-blue:focus, .bnt-blue.focus {
+    color: #fff;
+    background-color: #273c75;
+    border-color: #273c75;
+    box-shadow: 0px 0px 0px #000;
 }
