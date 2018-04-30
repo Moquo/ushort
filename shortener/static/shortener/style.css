@@ -2,3 +2,16 @@
  * CSS for ushort by Moquo
  * Link to the Github-Repo: https://github.com/Moquo/ushort
  */
+
+/* Navbar */
+.nav-light-theme {
+    background-color: #f5f6fa !important;
+    box-shadow: 0px 0px 10px rgba(10, 10, 10, 0.5);
+}
+.nav-light-theme .navbar-brand {
+    color: #34495e;
+    text-shadow: 0px 0px 10px rgba(10, 10, 10, 0.5);
+}
+.nav-light-theme .navbar-nav .nav-link {
+    color: #111;
+}
