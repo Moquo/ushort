@@ -6,7 +6,12 @@
         <div class="row">
             <div class="col-md-10 offset-md-1 cont-dark">
                 <h3  style="padding-top: 5px;" align="center">Short an url</h3>
-
+                {% if error %}
+                    <p><span class="text-error">Error!</span> {{ error }}</p>
+                {% endif %}
+                {% if success %}
+                    <p><span class="text-success">Success!</span> The shorten url for <a href="{{ success.orig_url }}">{{ success.orig_url }}</a> is <a href="{{ success.short_url }}">{{ success.short_url }}</a></p>
+                {% endif %}
                 <form style="padding-bottom: 10px;" action="{% url 'shortener:index' %}" method="post">
                     {% csrf_token %}
                     <div class="form-group">
