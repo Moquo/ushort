@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import Url
 import random
 import string
@@ -72,3 +72,10 @@ def index(request):
         "error": error,
         "success": success
     })
+
+def redirectUrl(request, url_id):
+    # Get the url
+    url = get_object_or_404(Url, url_id=url_id)
+
+    # Redirect
+    return redirect(url.orig_url)
