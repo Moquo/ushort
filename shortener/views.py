@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, get_object_or_404, redirect, reverse
 from .models import Url
 import random
 import string
@@ -64,8 +64,7 @@ def index(request):
             shorten_url = short_url(url_to_short)
             success = {
                 "orig_url": shorten_url.orig_url,
-                # TODO: Use url() to create this url
-                "short_url": settings.SERVER_URL + "/s/" + shorten_url.url_id
+                "short_url": settings.SERVER_URL + reverse("shortener:redirectUrl", args=[shorten_url.url_id])
             }
 
     return render(request, "shortener/index.html", {
