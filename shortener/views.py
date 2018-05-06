@@ -72,9 +72,18 @@ def index(request):
         "success": success
     })
 
+# Redirect a user to an url
 def redirectUrl(request, url_id):
     # Get the url
     url = get_object_or_404(Url, url_id=url_id)
 
     # Redirect
     return redirect(url.orig_url)
+
+# Render the textbox to enter the url_id
+def viewUrl(request):
+    # Render
+    return render(request, "shortener/viewUrl.html", {
+        "url_scheme": settings.SERVER_URL + reverse("shortener:redirectUrl", args=["THIS_IS_THE_PART_WHICH_IS_CALLED_THE_URL_ID"]),
+        "url_scheme_example": settings.SERVER_URL + reverse("shortener:redirectUrl", args=["abcdefgh"])
+    })

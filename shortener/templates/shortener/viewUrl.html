@@ -1,0 +1,41 @@
+{% extends 'shortener/base.html' %}
+{% block title %}View{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 offset-md-1 cont-dark">
+                <h3  style="padding-top: 5px;" align="center">View information about a shorten url</h3>
+                <div style="padding-bottom: 10px;">
+                    <div class="form-group">
+                        <label for="urlId">Url (ID) <a href="#" data-toggle="modal" data-target="#urlIdInfo">(?)</a></label>
+                        <input type="text" class="form-control form-text-field" id="urlId" placeholder="Url (ID)">
+                    </div>
+                    <button id="viewbutton" class="btn btn-blue">View</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Url ID -->
+    <div class="modal fade" id="urlIdInfo" tabindex="-1" role="dialog" aria-labelledby="urlIdInfoLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="urlIdInfoLabel">What is an "Url ID"?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h6><b>What is this?</b></h6>
+                    <p>We use the so called "Url ID" internally to identify the shorten urls. We store them along with the original url in our database.</p>
+                    <h6><b>How to get it?</b></h6>
+                    <p>That's fairly simple. It's the part behind a specific part behind the url. The scheme of the url is the following: {{ url_scheme }}. For example: In the url {{ url_scheme_example }} the url id is abcdefgh.</p>
+                    <h6><b>Do i really need this?</b></h6>
+                    <p>No. You can enter the whole url and we'll parse it for you. Use it if you want but you don't need to :)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
