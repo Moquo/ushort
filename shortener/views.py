@@ -89,5 +89,6 @@ def viewUrl(request):
     # Render
     return render(request, "shortener/viewUrl.html", {
         "url_scheme": settings.SERVER_URL + reverse("shortener:redirectUrl", args=["THIS_IS_THE_PART_WHICH_IS_CALLED_THE_URL_ID"]),
-        "url_scheme_example": settings.SERVER_URL + reverse("shortener:redirectUrl", args=["abcdefgh"])
+        "url_scheme_example": settings.SERVER_URL + reverse("shortener:redirectUrl", args=["abcdefgh"]),
+        "base_url": settings.SERVER_URL
     })
