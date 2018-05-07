@@ -77,6 +77,10 @@ def redirectUrl(request, url_id):
     # Get the url
     url = get_object_or_404(Url, url_id=url_id)
 
+    # Add 1 to clicks
+    url.clicks += 1
+    url.save()
+
     # Redirect
     return redirect(url.orig_url)
 
