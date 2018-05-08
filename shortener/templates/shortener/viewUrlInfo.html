@@ -1,0 +1,21 @@
+{% extends 'shortener/base.html' %}
+{% block title %}View :: {{ url.url_id }}{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 offset-md-1 cont-dark">
+                <h3  style="padding-top: 5px;" align="center">View information about shorten url {{ url.url_id }}</h3>
+                <div style="padding-bottom: 10px;">
+                    <p>
+                        <b>Url ID:</b> {{ url.url_id }}<br>
+                        <b>Short url:</b> <a href="{{ base_url }}{% url 'shortener:redirectUrl' url.url_id %}">{{ base_url }}{% url 'shortener:redirectUrl' url.url_id %}</a><br>
+                        <b>Original url:</b> <a href="{{ url.orig_url }}">{{ url.orig_url }}</a><br>
+                        <b>Clicks:</b> {{ url.clicks }}<br>
+                        <b>Created at:</b> {{ url.created_at }}<br>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

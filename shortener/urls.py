@@ -7,4 +7,5 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('s/<url_id>', views.redirectUrl, name='redirectUrl'),
     path('view/', views.viewUrl, name='viewUrl'),
+    path('view/<url_id>', views.viewUrlInfo, name='viewUrlInfo'),
 ]

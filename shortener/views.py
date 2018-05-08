@@ -92,3 +92,14 @@ def viewUrl(request):
         "url_scheme_example": settings.SERVER_URL + reverse("shortener:redirectUrl", args=["abcdefgh"]),
         "base_url": settings.SERVER_URL
     })
+
+# Show url information
+def viewUrlInfo(request, url_id):
+    # Get the url
+    url = get_object_or_404(Url, url_id=url_id)
+
+    # Render the url info page
+    return render(request, "shortener/viewUrlInfo.html", {
+        "url": url,
+        "base_url": settings.SERVER_URL
+    })
