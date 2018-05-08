@@ -49,9 +49,8 @@
             var urlId = $("#urlId").val();
 
             // Check if theres an url id in there and get the url id
-            // TODO: Parse using url
-            if(urlId.startsWith("{{ base_url }}/s/")) {
-                urlId = urlId.split("/s/")[1];
+            if(urlId.startsWith("{{ base_url }}" + "{% url 'shortener:redirectUrl' 'REPLACE_THIS_WITH_NOTHING' %}".replace("REPLACE_THIS_WITH_NOTHING", ""))) {
+                urlId = urlId.split("{% url 'shortener:redirectUrl' 'REPLACE_THIS_WITH_NOTHING' %}".replace("REPLACE_THIS_WITH_NOTHING", ""))[1];
             } else if(!(urlId.length == 8)) {
                 $("#errorMsg").text("The code doesn't have the correct length.");
                 $("#error").show();
