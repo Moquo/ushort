@@ -59,8 +59,7 @@
             }
 
             // Url id is accessible here => Redirect
-            // TODO: Use url
-            window.location.href = "{{ base_url }}" + "/view/" + urlId;
+            window.location.href = "{{ base_url }}" + "{% url 'shortener:viewUrlInfo' 'REPLACE_THIS_WITH_URL_ID' %}".replace("REPLACE_THIS_WITH_URL_ID", urlId);
         });
     </script>
 {% endblock %}

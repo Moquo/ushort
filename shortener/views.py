@@ -23,7 +23,6 @@ def short_url(url_to_short):
         # Loop over every Url and then check it
         # TODO: Use filter
         for x in Url.objects.all():
-            print(x.url_id == url_id)
             if x.url_id == url_id:
                 url_id = random_string(8)
             else:
